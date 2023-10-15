@@ -98,6 +98,7 @@ let total = 0;
 basketBtn.addEventListener("click", () => {
   modal.classList.add("active");
   renderBasket();
+  calculateTotal();
 });
 
 /* //close tuşu ile ikapatma
@@ -123,7 +124,7 @@ function addToBasket(id) {
 
   //sepğete daha önce ürün eklendiyse bulma
 
-  const found = basket.find((i) => i.id === id);
+  const found = basket.find((i) => i.id == id);
   if (found) {
     found.amount++;
   } else {
@@ -164,7 +165,7 @@ function renderBasket() {
 </div>`
     )
     .join(" ");
-    calculateTotal()
+
 }
 
 //toplam ürün sayısını ve fiyatını hesaplar
